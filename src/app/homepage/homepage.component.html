@@ -1,0 +1,105 @@
+<main>
+<button md-button routerLinkActive="active"><md-icon>info</md-icon>About Us</button>
+<button md-button routerLinkActive="active"><md-icon>settings</md-icon>Services</button>
+<button md-button routerLinkActive="active"><md-icon>email</md-icon>Contact</button>
+<button md-button routerLinkActive="active"><md-icon>image-multiple</md-icon>Gallery</button>  
+
+
+<p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
+    Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. 
+    Our staff is friendly, professional and knowledgeable, so you're in good hands.</p>
+
+  <h4>Request A Free Quote</h4>
+    <form class="example-form">
+
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><md-form-field class="example-full-width">
+              <input mdInput placeholder="First name">
+            </md-form-field></td>
+            <td><md-form-field class="example-full-width">
+              <input mdInput placeholder="Last Name">
+            </md-form-field></td>
+          </tr></table>
+
+        <md-form-field class="example-full-width">
+            <input mdInput placeholder="Email" [formControl]="emailFormControl">
+            <md-error *ngIf="emailFormControl.hasError('pattern')">
+              Please enter a valid email address
+            </md-error>
+            <md-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </md-error>
+          </md-form-field>
+
+          <md-form-field class="example-full-width">
+              <span mdPrefix>+1 &nbsp;</span>
+              <input type="tel" mdInput placeholder="Telephone">
+              <md-icon mdSuffix>mode_edit</md-icon>
+            </md-form-field>
+      
+       
+      
+        <p>
+          <md-form-field class="example-full-width">
+            <textarea mdInput placeholder="Address"></textarea>
+          </md-form-field>
+          <md-form-field class="example-full-width">
+            <textarea mdInput placeholder="Address 2"></textarea>
+          </md-form-field>
+        </p>
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><md-form-field class="example-full-width">
+            <input mdInput placeholder="City">
+          </md-form-field></td>
+          <td><md-form-field class="example-full-width">
+            <input mdInput placeholder="State">
+          </md-form-field></td>
+          <td><md-form-field class="example-full-width">
+            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
+            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+          </md-form-field></td>
+        </tr></table>
+        
+      </form>
+      <md-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
+          <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+            {{season}}
+          </md-radio-button>
+        </md-radio-group>
+
+        <md-form-field class="example-full-width">
+            <input mdInput #message maxlength="256" placeholder="Message">
+            <md-hint align="start"><strong>Let us know what your looking to do</strong> </md-hint>
+            <md-hint align="end">{{message.value.length}} / 256</md-hint>
+          </md-form-field>
+          <button md-button routerLinkActive="active"><md-icon>submit</md-icon>Submit</button>  
+        
+
+</main>
+<!-- <ngb-carousel align="center">
+        <ng-template ngbSlide>
+          <img src="/assets/camera1.jpg" alt="Random first slide" style="max-height:300px; margin:0 auto;">
+          <div class="carousel-caption">
+            
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="/assets/POS.jpg" alt="Random second slide" style="max-height:300px; margin:0 auto;">
+          <div class="carousel-caption">
+            
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="/assets/Voip.png" alt="Random third slide" style="max-height:300px; margin:0 auto;">
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel> -->
+
+<!-- <h2>TECHNOLOGY GATEWAY INC. IN CHICAGO RIDGE</h2>
+<p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
+    Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. 
+    Our staff is friendly, professional and knowledgeable, so you're in good hands.</p> -->
