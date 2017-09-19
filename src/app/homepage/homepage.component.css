@@ -6,15 +6,16 @@ h2 { color: #3367A1; font-family: 'Open Sans', sans-serif; font-size: 30px; font
 
 p {color: #080808; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
 
-button{ background-color: #efefef; 
+button{ background-color: #0A9628; 
     width: 200px;
-  
+    float: right;
 
 }
 
 main{
     margin: auto;
-    width: 60%;
+    width: 40%;
+    
     /* border: 3px solid green; */
     padding: 10px;
   }

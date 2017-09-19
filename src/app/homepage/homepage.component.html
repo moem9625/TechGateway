@@ -1,23 +1,33 @@
 <main>
-<button md-button routerLinkActive="active"><md-icon>info</md-icon>About Us</button>
-<button md-button routerLinkActive="active"><md-icon>settings</md-icon>Services</button>
-<button md-button routerLinkActive="active"><md-icon>email</md-icon>Contact</button>
-<button md-button routerLinkActive="active"><md-icon>image-multiple</md-icon>Gallery</button>  
+<!-- <button md-button routerLink="/aboutUs"><md-icon>info</md-icon>About Us</button>
+<button md-button routerLink="/services"><md-icon>settings</md-icon>Services</button>
+<button md-button routerLink="/contactUs"><md-icon>email</md-icon>Contact</button>
+<button md-button routerLink="active"><md-icon>image-multiple</md-icon>Gallery</button>   -->
 
+<!-- <input id="str" [(ngModel)]="str"/>
+<button (click)="sendValues()">Send</button> -->
 
-<p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
+<!-- <p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
     Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. 
-    Our staff is friendly, professional and knowledgeable, so you're in good hands.</p>
+    Our staff is friendly, professional and knowledgeable, so you're in good hands.</p> -->
+    We Specialize In 
+    <md-card> 
+    <md-list>
+       <p> <md-list-item> <md-icon>videocamera</md-icon> Security Cameras </md-list-item></p>
+       <p><md-list-item> <md-icon svgIcon="thumbs-up"></md-icon>Access Control </md-list-item></p>
+        <p><md-list-item><md-icon>security</md-icon> Alarms </md-list-item></p>
+       </md-list>
+</md-card>
 
   <h4>Request A Free Quote</h4>
     <form class="example-form">
-
+      
         <table class="example-full-width" cellspacing="0"><tr>
             <td><md-form-field class="example-full-width">
-              <input mdInput placeholder="First name">
+              <input mdInput placeholder="First name" id="firstName" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
             </md-form-field></td>
             <td><md-form-field class="example-full-width">
-              <input mdInput placeholder="Last Name">
+              <input mdInput placeholder="Last Name" id="lastName" [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}">
             </md-form-field></td>
           </tr></table>
 
@@ -33,7 +43,7 @@
 
           <md-form-field class="example-full-width">
               <span mdPrefix>+1 &nbsp;</span>
-              <input type="tel" mdInput placeholder="Telephone">
+              <input type="tel" mdInput placeholder="Telephone" id="tel" [(ngModel)]="tel" [ngModelOptions]="{standalone: true}">
               <md-icon mdSuffix>mode_edit</md-icon>
             </md-form-field>
       
@@ -41,10 +51,10 @@
       
         <p>
           <md-form-field class="example-full-width">
-            <textarea mdInput placeholder="Address"></textarea>
+            <textarea mdInput placeholder="Address" id="address" [(ngModel)]="address" [ngModelOptions]="{standalone: true}"></textarea>
           </md-form-field>
           <md-form-field class="example-full-width">
-            <textarea mdInput placeholder="Address 2"></textarea>
+            <textarea mdInput placeholder="Address 2" id="address2" [(ngModel)]="address2" [ngModelOptions]="{standalone: true}"></textarea>
           </md-form-field>
         </p>
       
@@ -56,7 +66,7 @@
             <input mdInput placeholder="State">
           </md-form-field></td>
           <td><md-form-field class="example-full-width">
-            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
+            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="" id="postCode" [(ngModel)]="postCode" [ngModelOptions]="{standalone: true}">
             <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
           </md-form-field></td>
         </tr></table>
@@ -73,7 +83,7 @@
             <md-hint align="start"><strong>Let us know what your looking to do</strong> </md-hint>
             <md-hint align="end">{{message.value.length}} / 256</md-hint>
           </md-form-field>
-          <button md-button routerLinkActive="active"><md-icon>submit</md-icon>Submit</button>  
+          <button (click)="sendValues()" md-button routerLinkActive="active"><md-icon>submit</md-icon>Submit</button>  
         
 
 </main>
@@ -103,3 +113,4 @@
 <p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
     Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. 
     Our staff is friendly, professional and knowledgeable, so you're in good hands.</p> -->
+   
