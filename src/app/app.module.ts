@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { EmailServiceService } from './email-service.service';
 
 
 
@@ -105,7 +106,7 @@ const appRoutes:Routes= [
     RouterModule.forRoot(appRoutes),
    
   ],
-  providers: [],
+  providers: [EmailServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

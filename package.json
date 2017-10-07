@@ -26,7 +26,11 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.1",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "nodemailer": "^2.1.0",
+    "nodemailer-sendgrid-transport": "^0.2.0"
   },
   "devDependencies": {
     "@angular/cli": "1.2.7",

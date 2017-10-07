@@ -4,13 +4,16 @@ import { Router } from '@angular/router';
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 import {DomSanitizer} from '@angular/platform-browser';
 import {MdIconRegistry} from '@angular/material';
+import { EmailServiceService } from '../email-service.service';
+
 
 
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
+  providers: [EmailServiceService]
 })
 export class HomepageComponent implements OnInit {
   firstName: string;
@@ -30,6 +33,11 @@ export class HomepageComponent implements OnInit {
   sendValues(): void {
   console.log(this.firstName + " " + this.lastName + " telphone " + this.tel + " address " + this.address + "address2 " + 
 this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " message " + this.message);
+
+ 
+
+
+
   }
 
 
@@ -50,10 +58,23 @@ this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " 
     ];  
     
   
-  constructor(private router:Router, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) { iconRegistry.addSvgIcon(
+  constructor(private router:Router, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer, emailservice: EmailServiceService) { 
+    iconRegistry.addSvgIcon(
     'thumbs-up',
     sanitizer.bypassSecurityTrustResourceUrl('assets/credit-card.svg'));
+
+
+
+    emailservice.VerifyEmail();
+  
+   
+  
+  
+  
+  
+  
   }
+  
 
   function(chosenCity: string) {
     console.log(chosenCity);
