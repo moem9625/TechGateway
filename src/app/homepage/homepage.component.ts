@@ -3,8 +3,9 @@ import {FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 import {DomSanitizer} from '@angular/platform-browser';
-import {MdIconRegistry} from '@angular/material';
+import {MatIconRegistry} from '@angular/material';
 import { EmailServiceService } from '../email-service.service';
+
 
 
 
@@ -24,20 +25,13 @@ export class HomepageComponent implements OnInit {
   postCode: string;
   favoriteSeason: string;
   message: string;
-
-
-
-
-
-
+ 
   sendValues(): void {
   console.log(this.firstName + " " + this.lastName + " telphone " + this.tel + " address " + this.address + "address2 " + 
 this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " message " + this.message);
 
  
-
-
-
+    this.emailservice.onSubmitForm();
   }
 
 
@@ -56,26 +50,16 @@ this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " 
       'Point of Sales(POS)'
       
     ];  
-    
-  
-  constructor(private router:Router, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer, emailservice: EmailServiceService) { 
+  constructor(private router:Router, 
+    iconRegistry: MatIconRegistry, 
+    sanitizer: DomSanitizer, 
+   private emailservice: EmailServiceService){ 
     iconRegistry.addSvgIcon(
     'thumbs-up',
     sanitizer.bypassSecurityTrustResourceUrl('assets/credit-card.svg'));
-
-
-
-    emailservice.VerifyEmail();
-  
-   
-  
-  
-  
-  
-  
+    // emailservice.VerifyEmail();
+    emailservice.buildForm();
   }
-  
-
   function(chosenCity: string) {
     console.log(chosenCity);
   }
@@ -84,5 +68,6 @@ this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " 
     var camera1 = "/assets/camera1.jpg";
     
   }
+  
 
 }
