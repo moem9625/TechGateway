@@ -19,16 +19,17 @@ import { EmailServiceService } from '../email-service.service';
 export class HomepageComponent implements OnInit {
   firstName: string;
   lastName: string;
+  email: string;
   tel: string;
   address: string;
   address2: string;
   postCode: string;
   favoriteSeason: string;
-  message: string;
+  message1: string;
  
   sendValues(): void {
   console.log(this.firstName + " " + this.lastName + " telphone " + this.tel + " address " + this.address + "address2 " + 
-this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " message " + this.message);
+this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " message " + this.message1 + "email " + this.email);
 
  
     this.emailservice.onSubmitForm();

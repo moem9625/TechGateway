@@ -63,7 +63,7 @@
           </tr></table>
 
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" [formControl]="emailFormControl">
+            <input matInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="email">
             <mat-error *ngIf="emailFormControl.hasError('pattern')">
               Please enter a valid email address
             </mat-error>
@@ -74,7 +74,7 @@
 
           <mat-form-field class="example-full-width">
               <span matPrefix>+1 &nbsp;</span>
-              <input type="tel" matInput placeholder="Telephone" id="tel" [(ngModel)]="tel" [ngModelOptions]="{standalone: true}">
+              <input type="tel" matInput placeholder="Telephone" id="tel" [(ngModel)]="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="tel">
               <mat-icon matSuffix>mode_edit</mat-icon>
             </mat-form-field>
       
@@ -108,18 +108,21 @@
             {{season}}
           </mat-radio-button>
         </mat-radio-group>
-
+   
         <mat-form-field class="example-full-width">
-            <input matInput #message maxlength="256" placeholder="Message">
+            <input matInput #message maxlength="256" placeholder="Message" id="message1" [(ngModel)]="message1">
             <mat-hint align="start"><strong>Let us know what your looking to do</strong> </mat-hint>
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
           </mat-form-field>
+
+
+          
           <!-- <button md-button>Click me!</button> -->
           <button (click)="sendValues()" mat-button routerLinkActive="active"><mat-icon>submit</mat-icon>Submit</button>
 
 
 
-          <form [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm()">
+          <!-- <form [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm()">
             
               <input type="text" formControlName="userFirstName">
               <label>First Name</label>
@@ -130,7 +133,7 @@
               <button type="submit">SUBMIT</button>
               <!-- <button (click)="sendValues()" mat-button routerLinkActive="active"><mat-icon>submit</mat-icon>Submit</button> -->
               
-            </form>
+            <!-- </form>  -->
           
           
 

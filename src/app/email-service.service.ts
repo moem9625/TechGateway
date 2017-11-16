@@ -27,21 +27,25 @@ export class EmailServiceService {
   }
 
   public onSubmitForm() {
-    var username= "Mohammed";
-    var password = "dafads"
-    var data = JSON.stringify({username: "Mahmoud", password: "ajflkjlkjMOhamma"});
-    // var body = "firstname=" + user.firstname + "&lastname=" + user.lastname + "&username=" + user.username + "&email=" + user.email + "&password=" + user.password;
-    
-    // let urlSearchParams = new URLSearchParams();
-    // urlSearchParams.append('username', username);
-    // urlSearchParams.append('password', password);
-    // let body = urlSearchParams.toString()
+    var firstName= "Mohammed";
+    var lastName = "Mahmoud"
+    var email = "jahmoud1989@yahoo.com"
+    var telPhone = "7086701535";
+    var add1 = "20808 N. 27Th Ave";
+    var add2 = "apt 1162";
+    var city = "Phoenix";
+    var state = "AZ";
+    var posCode = "85027";
+    var serv = "cameras";
+    var mess = "I would Like cameras installed";
+   
    console.log(this.contactForm.value);
     this.formSubmitted = true;
     // this.contactForm.reset();
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
     let options = new RequestOptions({ headers: headers });
-    let body = `username=${username}&password=${password}`;
+    let body = `firstName=${firstName}&lastName=${lastName}&email=${email}&telPhone=${telPhone}&add1=${add1}&add2=${add2}&city=${city}
+    &state=${state}&posCode=${posCode}&serv=${serv}&mess=${mess}`;
     return this.http.post('http://localhost:3000/signup', body, { headers: headers }).subscribe(
       data => {
         alert('ok');
