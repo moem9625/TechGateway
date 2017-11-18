@@ -21,34 +21,34 @@ export class EmailServiceService {
 
   buildForm() {
     this.contactForm = this.formBuilder.group({
-      userFirstName: this.formBuilder.control(null, Validators.required),
-      userLastName: this.formBuilder.control(null, Validators.required)
+      firstName: this.formBuilder.control(null, Validators.required),
+      lastName: this.formBuilder.control(null, Validators.required),
+      email: this.formBuilder.control(null, Validators.required),
+      tel: this.formBuilder.control(null, Validators.required),
+      address: this.formBuilder.control(null, Validators.required),
+      // address2: this.formBuilder.control(null, Validators.required),
+      postCode: this.formBuilder.control(null, Validators.required),
+      service: this.formBuilder.control(null, Validators.required),
+      City: this.formBuilder.control(null, Validators.required),
+      State: this.formBuilder.control(null, Validators.required),
+      message1: this.formBuilder.control(null, Validators.required),
+
+
     });
   }
 
-  public onSubmitForm() {
-    var firstName= "Mohammed";
-    var lastName = "Mahmoud"
-    var email = "jahmoud1989@yahoo.com"
-    var telPhone = "7086701535";
-    var add1 = "20808 N. 27Th Ave";
-    var add2 = "apt 1162";
-    var city = "Phoenix";
-    var state = "AZ";
-    var posCode = "85027";
-    var serv = "cameras";
-    var mess = "I would Like cameras installed";
-   
-   console.log(this.contactForm.value);
+  public onSubmitForm(fullForm: string) {
+  //  console.log(this.contactForm.value);
     this.formSubmitted = true;
-    // this.contactForm.reset();
+    fullForm = JSON.stringify(this.contactForm.value);
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
     let options = new RequestOptions({ headers: headers });
-    let body = `firstName=${firstName}&lastName=${lastName}&email=${email}&telPhone=${telPhone}&add1=${add1}&add2=${add2}&city=${city}
-    &state=${state}&posCode=${posCode}&serv=${serv}&mess=${mess}`;
-    return this.http.post('http://localhost:3000/signup', body, { headers: headers }).subscribe(
+    let body = `fullForm=${fullForm}`;
+    return this.http.post('http://us-central1-functions-84812.cloudfunctions.net/widgets/signup', body, { headers: headers }).subscribe(
       data => {
-        alert('ok');
+        alert('Message has been sent');
+        
+        // this.contactForm.reset();
       },
       error => {
         console.log(JSON.stringify(error.json()));

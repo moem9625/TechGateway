@@ -5,7 +5,7 @@
       </div>
     </ng-template>
     <ng-template ngbSlide>
-      <img src="/assets/POS.jpg" alt="Random second slide" style="max-height:300px; margin:0 auto;">
+      <img src="/assets/POS1.jpg" alt="Random second slide" style="max-height:300px; margin:0 auto;">
       <div class="carousel-caption">
         
       </div>
@@ -20,24 +20,13 @@
 
 
 <main>
-<!-- <button mat-button routerLink="/aboutUs"><mat-icon>info</mat-icon>About Us</button>
-<button mat-button routerLink="/services"><mat-icon>settings</mat-icon>Services</button>
-<button mat-button routerLink="/contactUs"><mat-icon>email</mat-icon>Contact</button>
-<button mat-button routerLink="active"><mat-icon>image-multiple</mat-icon>Gallery</button>   -->
-
-<!-- <input id="str" [(ngModel)]="str"/>
-<button (click)="sendValues()">Send</button> -->
-
-<!-- <p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
-    Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. 
-    Our staff is friendly, professional and knowledgeable, so you're in good hands.</p> -->
-
     <mat-card> 
     <mat-list>
       <p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. Our staff is friendly, professional and knowledgeable, so you're in good hands.</p>
        <p> <mat-list-item> <mat-icon>videocamera</mat-icon> Security Cameras </mat-list-item></p>
        <p><mat-list-item> <mat-icon svgIcon="thumbs-up"></mat-icon>Access Control </mat-list-item></p>
         <p><mat-list-item><mat-icon>security</mat-icon> Alarms </mat-list-item></p>
+        
        </mat-list>
 </mat-card>
 
@@ -51,117 +40,75 @@
 <p></p>
 
   <h4>Request A Free Quote</h4>
-    <form class="example-form">
-      
-        <table class="example-full-width" cellspacing="0"><tr>
-            <td><mat-form-field class="example-full-width">
-              <input matInput placeholder="First name" id="firstName" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
-            </mat-form-field></td>
-            <td><mat-form-field class="example-full-width">
-              <input matInput placeholder="Last Name" id="lastName" [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}">
-            </mat-form-field></td>
-          </tr></table>
+          <form #loginForm="ngForm" [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm(loginForm.value)">
+              <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width">
+                   
+                    <input matInput placeholder="First name" id="firstName" formControlName="firstName" ngModel required>
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width">
+                    <input required matInput placeholder="Last Name" id="lastName" formControlName="lastName">
+                  </mat-form-field></td>
+                </tr></table>
 
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="email">
-            <mat-error *ngIf="emailFormControl.hasError('pattern')">
-              Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              Email is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-              <span matPrefix>+1 &nbsp;</span>
-              <input type="tel" matInput placeholder="Telephone" id="tel" [(ngModel)]="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="tel">
-              <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
-      
-       
-      
-        <p>
-          <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="Address" id="address" [(ngModel)]="address" [ngModelOptions]="{standalone: true}"></textarea>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="Address 2" id="address2" [(ngModel)]="address2" [ngModelOptions]="{standalone: true}"></textarea>
-          </mat-form-field>
-        </p>
-      
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="City">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="State">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="" id="postCode" [(ngModel)]="postCode" [ngModelOptions]="{standalone: true}">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-          </mat-form-field></td>
-        </tr></table>
+                <mat-form-field class="example-full-width">
+                    <input required matInput placeholder="Email" id="email" formControlName="email">
+                    <!-- [formControl]="emailFormControl"<mat-error *ngIf="emailFormControl.hasError('pattern')">
+                      Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Email is <strong>required</strong>
+                    </mat-error> -->
+                  </mat-form-field>
         
-      </form>
-      <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
-          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-            {{season}}
-          </mat-radio-button>
-        </mat-radio-group>
-   
-        <mat-form-field class="example-full-width">
-            <input matInput #message maxlength="256" placeholder="Message" id="message1" [(ngModel)]="message1">
-            <mat-hint align="start"><strong>Let us know what your looking to do</strong> </mat-hint>
-            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-          </mat-form-field>
-
-
-          
-          <!-- <button md-button>Click me!</button> -->
-          <button (click)="sendValues()" mat-button routerLinkActive="active"><mat-icon>submit</mat-icon>Submit</button>
-
-
-
-          <!-- <form [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm()">
-            
-              <input type="text" formControlName="userFirstName">
-              <label>First Name</label>
+                  <mat-form-field class="example-full-width">
+                      <span matPrefix>+1 &nbsp;</span>
+                      <input required type="tel" matInput placeholder="Telephone" id="tel" formControlName="tel">
+                      <mat-error *ngIf="emailFormControl.hasError('required')"> Telephone is <strong>required</strong></mat-error>
+                      
+                      <mat-icon matSuffix>mode_edit</mat-icon>
+                    </mat-form-field>
               
-              <input type="text" formControlName="userLastName">
-              <label>Last Name</label>
-            
-              <button type="submit">SUBMIT</button>
-              <!-- <button (click)="sendValues()" mat-button routerLinkActive="active"><mat-icon>submit</mat-icon>Submit</button> -->
+               
               
-            <!-- </form>  -->
-          
-          
+                <p>
+                  <mat-form-field class="example-full-width">
+                    <textarea  required matInput placeholder="Address" id="address" formControlName="address"></textarea>
+                  </mat-form-field>
+                  <!-- <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Address 2" id="address2" formControlName="address2"></textarea>
+                  </mat-form-field> -->
+                </p>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <input required matInput placeholder="City" formControlName="City">
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                      <input required matInput placeholder="State" formControlName="State">
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                      <input required matInput #postalCode maxlength="5" placeholder="Postal Code" value="" id="postCode" formControlName="postCode">
+                      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                    </mat-form-field></td>
+                  </tr></table>
+
+                  <mat-radio-group class="example-radio-group" formControlName="service">
+                      <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                        {{season}}
+                      </mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-form-field class="example-full-width">
+                        <input required matInput #message maxlength="256" placeholder="Message" id="message1" formControlName="message1">
+                        <mat-hint align="start"><strong>Let us know what your looking to do</strong> </mat-hint>
+                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                      </mat-form-field>
+                
+            
+             
+              <button class="button button2" type="submit" [disabled]="loginForm.invalid">Submit</button>
+             </form> 
 
 
 </main>
-<!-- <ngb-carousel align="center">
-        <ng-template ngbSlide>
-          <img src="/assets/camera1.jpg" alt="Random first slide" style="max-height:300px; margin:0 auto;">
-          <div class="carousel-caption">
-            
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img src="/assets/POS.jpg" alt="Random second slide" style="max-height:300px; margin:0 auto;">
-          <div class="carousel-caption">
-            
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img src="/assets/Voip.png" alt="Random third slide" style="max-height:300px; margin:0 auto;">
-          <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </ng-template>
-      </ngb-carousel> -->
-<!-- <h2>TECHNOLOGY GATEWAY INC. IN CHICAGO RIDGE</h2>
-<p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your 
-    Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. 
-    Our staff is friendly, professional and knowledgeable, so you're in good hands.</p> -->
-   

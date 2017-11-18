@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import { EmailServiceService } from '../email-service.service';
+// import {MatSnackBar} from '@angular/material';
+// import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 
 
@@ -26,13 +28,20 @@ export class HomepageComponent implements OnInit {
   postCode: string;
   favoriteSeason: string;
   message1: string;
+  fullForm: string;
+
+  
  
   sendValues(): void {
-  console.log(this.firstName + " " + this.lastName + " telphone " + this.tel + " address " + this.address + "address2 " + 
-this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " message " + this.message1 + "email " + this.email);
+  var fullForm;
+  fullForm = "First Name: " + this.firstName +  " lastName: " + this.lastName + " \ntelphone: " + this.tel + " \naddress: " + this.address + " \naddress2: " + 
+this.address2 + " \npostal Code: " + this.postCode + " \n" + this.favoriteSeason + " \nmessage: " + this.message1 + " \nemail " + this.email;
 
  
-    this.emailservice.onSubmitForm();
+    this.emailservice.onSubmitForm(fullForm);
+    this.buildForm();
+    this.formSubmitted = true;
+    this.contactForm.reset();
   }
 
 
@@ -52,14 +61,26 @@ this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " 
       
     ];  
   constructor(private router:Router, 
-    iconRegistry: MatIconRegistry, 
+    public formBuilder: FormBuilder,
+    iconRegistry: MatIconRegistry,
+    
     sanitizer: DomSanitizer, 
    private emailservice: EmailServiceService){ 
     iconRegistry.addSvgIcon(
-    'thumbs-up',
-    sanitizer.bypassSecurityTrustResourceUrl('assets/credit-card.svg'));
+    'thumbs-up',sanitizer.bypassSecurityTrustResourceUrl('assets/credit-card.svg'));
     // emailservice.VerifyEmail();
     emailservice.buildForm();
+   
+  }
+  contactForm: FormGroup;
+  formSubmitted: boolean = false;
+  
+
+  buildForm() {
+    this.contactForm = this.formBuilder.group({
+      firstName: this.formBuilder.control(null, Validators.required),
+      userLastName: this.formBuilder.control(null, Validators.required)
+    });
   }
   function(chosenCity: string) {
     console.log(chosenCity);
@@ -69,6 +90,11 @@ this.address2 + " postal Code " + this.postCode + " " + this.favoriteSeason + " 
     var camera1 = "/assets/camera1.jpg";
     
   }
+  // openSnackBar(message: string, action: string) {
+  //   this.snackBar.open("Email Sent", action, {
+  //     duration: 2000,
+  //   });
+  // }
   
 
 }

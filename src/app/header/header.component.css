@@ -28,3 +28,11 @@ button{ background-color: #efefef;
 
 }
 
+#phone {
+  margin-left:50px;
+  color:#212121;
+}
+logo {
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman";
+}
+
