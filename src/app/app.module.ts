@@ -12,6 +12,8 @@ import { EmailServiceService } from './email-service.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
+
+
 // import {MatListModule} from '@angular/material/list';
 
 
@@ -77,6 +79,10 @@ const appRoutes:Routes= [
     path: 'contactUs',
     component: ContactUsComponent
   },
+  {
+    path: 'gallery',
+    component: GalleryComponent
+  },
   { path: '**', redirectTo: '' }
 ]
 @NgModule({
@@ -85,6 +91,7 @@ const appRoutes:Routes= [
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    
     HomepageComponent,
     AboutComponent,
     ContactUsComponent,

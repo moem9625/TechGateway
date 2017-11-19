@@ -35,4 +35,8 @@ button{ background-color: #efefef;
 logo {
   font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman";
 }
+.bg-faded {
+  align:center;
+  background-color: white;
+}
 

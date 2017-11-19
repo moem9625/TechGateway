@@ -1,4 +1,4 @@
-div.bottom {
+/* div.bottom {
   height: 200px;
   width: 80%;
   margin-left: auto;
@@ -8,20 +8,20 @@ div.bottom {
   border-top: 4px solid #00ccff;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  /* background-color: #575757; */
+  
 }
 
 div.col {
   float: left;
   width: 33%;
-}
+} */
 
-.example-card {
+/* .example-card {
   width: 350px;
   height: 650px;
 }
 
 .example-header-image {
-  background-image: url('');
+  
   background-size: cover;
-}
+} */

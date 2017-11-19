@@ -65,7 +65,7 @@ this.address2 + " \npostal Code: " + this.postCode + " \n" + this.favoriteSeason
     iconRegistry: MatIconRegistry,
     
     sanitizer: DomSanitizer, 
-   private emailservice: EmailServiceService){ 
+   public emailservice: EmailServiceService){ 
     iconRegistry.addSvgIcon(
     'thumbs-up',sanitizer.bypassSecurityTrustResourceUrl('assets/credit-card.svg'));
     // emailservice.VerifyEmail();

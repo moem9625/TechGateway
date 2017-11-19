@@ -1,10 +1,10 @@
-h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+/* h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
 
 
 h2 { color: #3367A1; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
 
 
-p {color: #080808; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+p {color: #080808; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; } */
 
 button{ background-color: #0A9628; 
     width: 200px;
@@ -22,14 +22,17 @@ main{
 
   .example-form {
     min-width: 150px;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
+    
    
   }
+
   
-  .example-full-width {
+  
+   .example-full-width {
     width: 100%;
-  }
+  } 
   .example-radio-group {
     display: inline-flex;
     flex-direction: column;
@@ -41,5 +44,5 @@ main{
   
   .example-selected-value {
     margin: 15px 0;
-  }
+  } 
   .button2 {background-color: #008CBA;}
