@@ -37,6 +37,7 @@ export class EmailServiceService {
 
     });
   }
+ 
 
   public onSubmitForm(fullForm: string) {
   //  console.log(this.contactForm.value);
