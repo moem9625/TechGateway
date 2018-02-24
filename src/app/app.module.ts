@@ -60,6 +60,9 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ServicesTabComponent } from './services-tab/services-tab.component';
 import {HttpModule} from '@angular/http';
 import {CdkTableModule} from '@angular/cdk/table';
+import { Header2Component } from './header2/header2.component';
+import { PreheaderComponent } from './preheader/preheader.component';
+import { Header3Component } from './header3/header3.component';
 const appRoutes:Routes= [
   { path: '', redirectTo: 'homePage', pathMatch: 'full' },
   {
@@ -96,7 +99,10 @@ const appRoutes:Routes= [
     AboutComponent,
     ContactUsComponent,
     GalleryComponent,
-    ServicesTabComponent
+    ServicesTabComponent,
+    Header2Component,
+    PreheaderComponent,
+    Header3Component
   ],
   imports: [
     NgbModule.forRoot(),

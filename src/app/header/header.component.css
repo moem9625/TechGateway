@@ -1,7 +1,7 @@
-img{
-    width:20%;
+/* img{
+    width:60%;
     
-  } 
+  }  */
 #menu {
    text-align: right;
 }
@@ -36,7 +36,39 @@ logo {
   font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman";
 }
 .bg-faded {
-  align:center;
+  
   background-color: white;
 }
+
+a.ex1 {
+    margin-left: 120px;
+}
+a.ex2 {
+  margin-left: 1220px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+
 

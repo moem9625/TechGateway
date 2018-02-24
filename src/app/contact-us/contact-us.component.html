@@ -1,70 +1,80 @@
-<!-- <h3>TECHNOLOGY GATEWAY INC.
-    CHICAGO RIDGE, IL, UNITED STATES</h3>
-    <p>Telephone: 7086707766</p>
-     <p>   Fax:           7083751574</p>
-      <p> Email:        tmgateway@gmail.com</p> -->
-
-
-<div class="container">
-    <div class="jumbotron">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div> 
-              <mat-card-title>Technoloy Gateway Inc.</mat-card-title>
-              <mat-card-subtitle></mat-card-subtitle>
-            </mat-card-header>
-            <!-- <img mat-card-image src="assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-            <mat-card-content>
-              <p><b>Telephone: (708)-670-1535</b></p>
-              <p><b>Fax: 7083751574</b></p>
-              <p><b>Email: tmgateway@gmail.com</b></p>
-              
-            </mat-card-content>
-            <mat-card-actions>
-              <!-- <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button> -->
-            </mat-card-actions>
-          </mat-card>
-          <!-- <form #loginForm="ngForm" [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm(loginForm.value)">
-           
-          <div class="form-group">
-              <label for="exampleFormControlInput1">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="form-group">
-            <label for="exampleFormControlInput1">Phone Number</label>
-            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Phone Number">
-          </div>
-           
-           
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Message</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-
-            <button class="btn btn-default" type="submit" [disabled]="loginForm.invalid">Submit</button>
-          </form> -->
-
-
-
-
-
-
-    </div>
-
 
   
 
+ 
+ 
 
+<div class="container">
+    <div class="jumbotron">
 
+        <mat-card>  
+            <mat-list>
+                <p class="h2">Technoloy Gateway Inc.</p>
+                <p class="h3"><mat-icon>phone</mat-icon>Call Us:(708)-670-7766</p>
+                <p class="h3"><mat-icon>email</mat-icon>Email: Info@tgatewayinc.com</p>
+                <p class="h3"><mat-icon>printer</mat-icon>Fax: 7083751574</p>
+ 
+ 
 
-
-    <!-- <div class="panel panel-primary">
-      <div class="panel-heading">Status</div>
-      <div class="panel-body">
-        <h3>{{title}}</h3>
-      </div>
-    </div> -->
-    
-    
+        </mat-list>      
+      </mat-card>
+    </div>   
   </div>
+
+
+
+
+
+      <div class="container">
+          <div class="jumbotron">
+      
+              <mat-card>  
+                  <mat-list>
+      
+                      <h4>Contact Us</h4>
+                  
+                      <form #loginForm="ngForm" [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm(loginForm.value)">
+                          <div class="form-group">
+                              <label for="exampleInputName">Name or Company</label>
+                              <input type="text" class="form-control" id="firstName" placeholder="Name or Company" formControlName="firstName" required>
+                            </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email" required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>  
+                          <div class="form-group">
+                              <label for="exampleInputphoneNumber">Phone Number</label>
+                              <input type="text" class="form-control" id="tel" placeholder="Phone Number" formControlName="tel" required>
+                            </div>   
+                     
+                          <div class="form-group">
+                            <label for="exampleSelect2">Type of Service</label>
+                            <select multiple class="form-control" id="service" formControlName="service">
+                              <option>Alarms</option>
+                              <option>Access Control</option>
+                              <option>Security Cameras</option>
+                              <option>Point of Sales(POS)</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleTextarea" >Message</label>
+                            <textarea class="form-control" id="message1" rows="3" formControlName="message1"></textarea>
+                          </div>
+                         
+                        
+                          <button class="btn btn-primary" type="submit">Submit</button>
+                          
+                        </form>
+                     
+                    <br>
+                    <br>
+                    <br>
+                    
+       
+      
+              </mat-list>      
+            </mat-card>
+          </div>   
+        </div>
+   

@@ -25,3 +25,8 @@ div.col {
   
   background-size: cover;
 } */
+
+.container .jumbotron, .container-fluid .jumbotron {
+ 
+  background-color: #063863;
+}

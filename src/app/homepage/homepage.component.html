@@ -1,144 +1,74 @@
+
+<img src="/assets/homePageImage.png" class="img-fluid" alt="Responsive image">
+
 <div class="container">
     <div class="jumbotron">
-        <ngb-carousel align="center">
-            <ng-template ngbSlide>
-              
-          <img src="/assets/Voip.png" class="img-fluid" alt="Random third slide" style="max-height:300px; margin:0 auto;">
-          <div class="carousel-caption">
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img src="/assets/POS1.jpg" class="img-fluid" alt="Random second slide" style="max-height:300px; margin:0 auto;">
-              <div class="carousel-caption">
-                
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-                <img src="/assets/camera1.jpg" class="img-fluid" alt="Random first slide" style="max-height:300px; margin:0 auto;">
-                <div class="carousel-caption">
-              </div>
-            </ng-template>
-          </ngb-carousel>
+
           <br>
 
           <mat-card> 
               <mat-list>
+                
                 <p>Here at Technology Gateway Inc. in Chicago Ridge,  we do our very best to make sure that we cover all of your Technology needs. Whether you need residential or commercial services, no job is too big or too small for us. Our staff is friendly, professional and knowledgeable, so you're in good hands.</p>
                  <p> <mat-list-item> <mat-icon>videocamera</mat-icon> Security Cameras </mat-list-item></p>
                  <p><mat-list-item> <mat-icon svgIcon="thumbs-up"></mat-icon>Access Control </mat-list-item></p>
                   <p><mat-list-item><mat-icon>security</mat-icon> Alarms </mat-list-item></p>
                   
-                 </mat-list>
-          </mat-card>
-          
-
-
-
-
-
-
-
-
-    </div>
-
-
-  
-
-
-
-
-
-    <!-- <div class="panel panel-primary">
-      <div class="panel-heading">Status</div>
-      <div class="panel-body">
-        <h3>{{title}}</h3>
-      </div>
-    </div> -->
-    
-    
-  </div>
-<main>
-
-    <br><p>UPGRADE YOUR CAMERAS FROM ANALOG TO DIGITAL. THE EXISTING COAX CABLE CAN BE USED WHICH REDUCES THE COST OF UPGRADING THE SYSTEM TO HD.</p>
-    <iframe  src="https://www.youtube.com/embed/O4aKeS4LfN4"
-    width="560" height="315" frameborder="0" allowfullscreen align="center"></iframe>
-
-         
-    <h4 align="center">Request A Free Quote</h4>
-    
-    <form #loginForm="ngForm" [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm(loginForm.value)">
-        <table class="example-full-width" cellspacing="0"><tr>
-            <td><mat-form-field class="example-full-width">
-              <input matInput placeholder="First name" id="firstName" formControlName="firstName" ngModel required>
-            </mat-form-field></td>
-            <td><mat-form-field class="example-full-width">
-              <input required matInput placeholder="Last Name" id="lastName" formControlName="lastName">
-            </mat-form-field></td>
-          </tr></table>
-
-          <mat-form-field class="example-full-width">
-              <input required matInput placeholder="Email" id="email" formControlName="email">
-              <!-- [formControl]="emailFormControl"<mat-error *ngIf="emailFormControl.hasError('pattern')">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error> -->
-            </mat-form-field>
-  
-            <mat-form-field class="example-full-width">
-                <span matPrefix>+1 &nbsp;</span>
-                <input required type="tel" matInput placeholder="Telephone" id="tel" formControlName="tel">
-                <mat-error *ngIf="emailFormControl.hasError('required')"> Telephone is <strong>required</strong></mat-error>
-                
-                <mat-icon matSuffix>mode_edit</mat-icon>
-              </mat-form-field>
-        
-         
-        
-          <p>
-            <mat-form-field class="example-full-width">
-              <textarea  required matInput placeholder="Address" id="address" formControlName="address"></textarea>
-            </mat-form-field>
-            <!-- <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Address 2" id="address2" formControlName="address2"></textarea>
-            </mat-form-field> -->
-          </p>
-
-          <table class="example-full-width" cellspacing="0"><tr>
-              <td><mat-form-field class="example-full-width">
-                <input required matInput placeholder="City" formControlName="City">
-              </mat-form-field></td>
-              <td><mat-form-field class="example-full-width">
-                <input required matInput placeholder="State" formControlName="State">
-              </mat-form-field></td>
-              <td><mat-form-field class="example-full-width">
-                <input required matInput #postalCode maxlength="5" placeholder="Postal Code" value="" id="postCode" formControlName="postCode">
-                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-              </mat-form-field></td>
-            </tr></table>
-
-            <mat-radio-group class="example-radio-group" formControlName="service">
-                <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-                  {{season}}
-                </mat-radio-button>
-              </mat-radio-group>
-
-              <mat-form-field class="example-full-width">
-                  <input required matInput #message maxlength="256" placeholder="Message" id="message1" formControlName="message1">
-                  <mat-hint align="start"><strong>Let us know what your looking to do</strong> </mat-hint>
-                  <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-                </mat-form-field>
-          
-      <br>
-
-       <br>
-       <br>
-       
+                  <br><p>UPGRADE YOUR CAMERAS FROM ANALOG TO DIGITAL. THE EXISTING COAX CABLE CAN BE USED WHICH REDUCES THE COST OF UPGRADING THE SYSTEM TO HD.</p>
+                 
+                  <p class="h3"><mat-icon>phone</mat-icon>708-670-7766</p>
+                  <p class="h3"><mat-icon>email</mat-icon>Info@tgatewayinc.com</p>
+                 
               <br>
+              <br>
+                 
+                  <h4>Request A Free Quote</h4>
+                  
+                  <form #loginForm="ngForm" [formGroup]="emailservice.contactForm" (ngSubmit)="emailservice.onSubmitForm(loginForm.value)">
+                      <div class="form-group">
+                          <label for="exampleInputName">Name or Company</label>
+                          <input type="text" class="form-control" id="firstName" placeholder="Name or Company" formControlName="firstName" required>
+                        </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>  
+                      <div class="form-group">
+                          <label for="exampleInputphoneNumber">Phone Number</label>
+                          <input type="text" class="form-control" id="tel" placeholder="Phone Number" formControlName="tel" required>
+                        </div>   
+                 
+                      <div class="form-group">
+                        <label for="exampleSelect2">Type of Service</label>
+                        <select multiple class="form-control" id="service" formControlName="service">
+                          <option>Alarms</option>
+                          <option>Access Control</option>
+                          <option>Security Cameras</option>
+                          <option>Point of Sales(POS)</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea" >Message</label>
+                        <textarea class="form-control" id="message1" rows="3" formControlName="message1"></textarea>
+                      </div>
+                     
+                    
+                      <button class="btn btn-primary" type="submit">Submit</button>
+                      
+                    </form>
+                 
+                <br>
+                <br>
+                <br>
+                
+                </mat-list>
               
-        <button class="btn btn-default" type="submit" [disabled]="loginForm.invalid">Submit</button>
-       </form>  
-
-
-</main>
+          </mat-card>
+        
+          <br>
+          <br>
+          
+        </div>
+           
+   

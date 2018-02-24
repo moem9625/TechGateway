@@ -14,3 +14,7 @@
     /* border: 3px solid green; */
     padding: 10px;
   }
+  .container .jumbotron, .container-fluid .jumbotron {
+ 
+    background-color: #063863;
+  }
